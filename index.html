@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101827">
+  <meta name="description" content="A private, offline daily discipline and habit tracker.">
+  <title>My Discipline</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
+  <style>
+    :root{color-scheme:dark;--bg:#101827;--panel:#172235;--panel2:#1d2b41;--line:#2c3b52;--ink:#f4f7fb;--muted:#a8b5c8;--accent:#8b9cff;--green:#42d6a0;--red:#ff7584;--gold:#ffcf70;--radius:20px;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -20%,#263d5e 0,transparent 55%),var(--bg);color:var(--ink);min-height:100vh}button,input,textarea{font:inherit}button{color:inherit;cursor:pointer} .wrap{width:min(980px,100%);margin:auto;padding:24px 18px 56px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:6px 0 24px}.brand{display:flex;align-items:center;gap:12px}.brand-mark{width:44px;height:44px;border-radius:14px;background:linear-gradient(145deg,#a4b0ff,#6879f4);display:grid;place-items:center;color:#111a2b;font-size:23px;font-weight:900;box-shadow:0 8px 24px #6476f355}.brand h1{font-size:20px;margin:0;letter-spacing:-.4px}.brand p{margin:3px 0 0;color:var(--muted);font-size:12px}.today-btn,.nav-btn,.small-btn{border:1px solid var(--line);background:var(--panel);border-radius:12px;padding:10px 13px}.today-btn:hover,.nav-btn:hover,.small-btn:hover{border-color:var(--accent)}.datebar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px}.date-title{font-size:clamp(20px,5vw,27px);font-weight:750;letter-spacing:-.6px}.date-sub{color:var(--muted);font-size:13px;margin-top:3px}.date-controls{display:flex;gap:8px}.nav-btn{width:42px;height:42px;padding:0;font-size:20px}.grid{display:grid;grid-template-columns:1.55fr 1fr;gap:16px}.card{background:linear-gradient(145deg,#1a273b,#152033);border:1px solid #293950;border-radius:var(--radius);padding:20px;box-shadow:0 14px 40px #060b1424}.card-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:16px}.card h2{font-size:16px;margin:0}.hint{font-size:12px;color:var(--muted);margin:5px 0 0}.score{color:var(--accent);font-weight:800;font-size:14px;white-space:nowrap}.progress{height:8px;border-radius:10px;background:#0e1726;overflow:hidden;margin:13px 0 18px}.progress>span{display:block;height:100%;width:0;background:linear-gradient(90deg,#7f91ff,#49d5a5);border-radius:inherit;transition:width .25s}.habits{display:grid;gap:9px}.habit{display:flex;align-items:center;gap:12px;background:#202e43;border:1px solid transparent;border-radius:14px;padding:11px 12px;min-height:53px;transition:.15s}.habit:hover{border-color:#3b4e6d}.habit-name{flex:1;font-size:14px;font-weight:600}.status{border:1px solid var(--line);background:#182438;color:var(--muted);font-weight:700;font-size:11px;letter-spacing:.3px;border-radius:10px;padding:9px 10px;min-width:94px}.status.done{border-color:#318c72;background:#143d37;color:#80f0c4}.status.not-done{border-color:#92515a;background:#482a35;color:#ff9daa}.status:focus-visible,button:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:2px}.reflect{display:grid;gap:12px}.field label{display:block;font-size:12px;font-weight:650;margin-bottom:7px}.field textarea{width:100%;min-height:92px;resize:vertical;border-radius:12px;border:1px solid var(--line);background:#111c2c;color:var(--ink);padding:11px 12px;line-height:1.45}.field textarea::placeholder{color:#718096}.autosave{height:16px;color:var(--muted);font-size:11px;margin-top:4px}.lower{margin-top:16px;display:grid;grid-template-columns:1.1fr 1fr;gap:16px}.calendar-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}.calendar-head h2{margin:0}.calendar-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}.weekday{text-align:center;color:var(--muted);font-size:10px;padding:2px 0 4px}.day{position:relative;display:grid;place-items:center;min-height:37px;border:1px solid transparent;background:#202e43;border-radius:10px;font-size:12px}.day.blank{background:transparent;pointer-events:none}.day:hover{border-color:var(--accent)}.day.selected{background:#6678ed;color:#fff;font-weight:800}.day.today:not(.selected){border-color:#8090ff}.day.has-data:after{content:"";position:absolute;bottom:4px;width:4px;height:4px;border-radius:50%;background:var(--green)}.day.selected.has-data:after{background:white}.legend{font-size:11px;color:var(--muted);margin:10px 0 0}.report-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.stat{background:#202e43;border-radius:13px;padding:13px}.stat strong{font-size:22px;display:block;letter-spacing:-.5px}.stat span{color:var(--muted);font-size:11px}.report-note{font-size:12px;color:var(--muted);line-height:1.5;margin:12px 0 0}.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);background:#26364d;border:1px solid #405474;border-radius:12px;padding:10px 14px;font-size:12px;opacity:0;pointer-events:none;transition:.2s}.toast.show{opacity:1;transform:translate(-50%,0)}footer{text-align:center;color:#738197;font-size:11px;margin-top:22px}
+    @media(max-width:720px){.wrap{padding:18px 14px 40px}.grid,.lower{grid-template-columns:1fr}.card{padding:17px}.grid{gap:12px}.lower{gap:12px}.top{margin-bottom:20px}.habit{padding:10px}.field textarea{min-height:76px}}
+    @media(max-width:380px){.status{min-width:82px;padding:8px 7px;font-size:10px}.habit-name{font-size:13px}.card{padding:14px}.wrap{padding-inline:10px}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="top">
+      <div class="brand"><div class="brand-mark" aria-hidden="true">✓</div><div><h1>My Discipline</h1><p>Small promises. Kept daily.</p></div></div>
+      <button class="today-btn" id="todayButton" type="button">Today</button>
+    </header>
+    <div class="datebar">
+      <div><div class="date-title" id="dateTitle"></div><div class="date-sub" id="dateSub"></div></div>
+      <div class="date-controls"><button class="nav-btn" id="prevDay" aria-label="Previous day" type="button">‹</button><button class="nav-btn" id="nextDay" aria-label="Next day" type="button">›</button></div>
+    </div>
+    <section class="grid" aria-label="Daily tracker">
+      <article class="card">
+        <div class="card-head"><div><h2>Daily commitments</h2><p class="hint">Choose DONE or NOT DONE for each promise.</p></div><div class="score" id="score">0 / 7</div></div>
+        <div class="progress" role="progressbar" aria-label="Daily completion" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress"><span id="progressFill"></span></div>
+        <div class="habits" id="habits"></div>
+      </article>
+      <article class="card">
+        <div class="card-head"><div><h2>Daily reflection</h2><p class="hint">A few honest words are enough.</p></div></div>
+        <div class="reflect">
+          <div class="field"><label for="win">What went well?</label><textarea id="win" maxlength="1200" placeholder="Name one win from today…"></textarea></div>
+          <div class="field"><label for="improve">What will I improve tomorrow?</label><textarea id="improve" maxlength="1200" placeholder="One small step for tomorrow…"></textarea></div>
+        </div><div class="autosave" id="saveStatus" aria-live="polite">Saved on this device</div>
+      </article>
+    </section>
+    <section class="lower" aria-label="Calendar and progress report">
+      <article class="card"><div class="calendar-head"><div><h2>Last 30 days</h2><p class="hint">Tap a day to view or edit it.</p></div></div><div class="calendar-grid" id="calendar" aria-label="30-day calendar"></div><p class="legend">● A dot means this day has saved progress or a reflection.</p></article>
+      <article class="card"><div class="card-head"><div><h2>30-day report</h2><p class="hint">Your recent consistency at a glance.</p></div></div><div class="report-stats"><div class="stat"><strong id="reportPercent">0%</strong><span>commitments completed</span></div><div class="stat"><strong id="daysActive">0</strong><span>days with activity</span></div><div class="stat"><strong id="perfectDays">0</strong><span>all-done days</span></div><div class="stat"><strong id="currentStreak">0</strong><span>current day streak</span></div></div><p class="report-note" id="reportNote">Every day is a fresh start. Your records stay on this device.</p></article>
+    </section>
+    <footer>Private by design · Stored locally on this device · Works offline</footer>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script>
+  (()=>{
+    const KEY='my-discipline-records-v1';
+    const commitments=['Wake up on time','Exercise / move my body','Eat mindfully','Read or learn','Focus on my priorities','Limit distracting screen time','Reflect and plan tomorrow'];
+    const $=id=>document.getElementById(id);
+    const pad=n=>String(n).padStart(2,'0');
+    const dateKey=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+    const parseDate=s=>{const [y,m,d]=s.split('-').map(Number);return new Date(y,m-1,d,12)};
+    const today=new Date();today.setHours(12,0,0,0);
+    let selected=new Date(today),records=loadRecords(),saveTimer;
+    function loadRecords(){try{const v=JSON.parse(localStorage.getItem(KEY)||'{}');return v&&typeof v==='object'?v:{}}catch{return {}}}
+    function persist(){try{localStorage.setItem(KEY,JSON.stringify(records));$('saveStatus').textContent='Saved on this device · '+new Date().toLocaleTimeString([],{hour:'numeric',minute:'2-digit'});renderCalendar();renderReport()}catch{$('saveStatus').textContent='Could not save — device storage may be full.'}}
+    function record(){const k=dateKey(selected);if(!records[k])records[k]={habits:{},win:'',improve:''};if(!records[k].habits)records[k].habits={};return records[k]}
+    function renderDay(){const k=dateKey(selected),r=records[k]||{habits:{},win:'',improve:''},isToday=k===dateKey(today);$('dateTitle').textContent=selected.toLocaleDateString(undefined,{weekday:'long',month:'long',day:'numeric'});$('dateSub').textContent=isToday?'Today':selected.toLocaleDateString(undefined,{year:'numeric'});$('habits').innerHTML='';commitments.forEach((name,i)=>{const val=r.habits?.[i]||'',row=document.createElement('div');row.className='habit';const label=document.createElement('div');label.className='habit-name';label.textContent=name;const btn=document.createElement('button');btn.type='button';btn.className='status'+(val==='done'?' done':val==='not'?' not-done':'');btn.textContent=val==='done'?'✓ DONE':val==='not'?'× NOT DONE':'SET STATUS';btn.setAttribute('aria-label',`${name}: ${val==='done'?'done':val==='not'?'not done':'not set'}. Tap to change.`);btn.onclick=()=>{const rr=record();rr.habits[i]=rr.habits[i]==='done'?'not':rr.habits[i]==='not'?'':'done';if(!rr.habits[i])delete rr.habits[i];persist();renderDay();toast(rr.habits[i]==='done'?'Marked done':'Status updated')};row.append(label,btn);$('habits').append(row)});$('win').value=r.win||'';$('improve').value=r.improve||'';updateScore();$('nextDay').disabled=k>=dateKey(today);$('nextDay').style.opacity=$('nextDay').disabled?'.45':'1'}
+    function updateScore(){const r=records[dateKey(selected)]||{habits:{}};const count=commitments.reduce((n,_,i)=>n+(r.habits?.[i]==='done'?1:0),0);$('score').textContent=`${count} / ${commitments.length} · ${Math.round(count/commitments.length*100)}%`;$('progressFill').style.width=`${count/commitments.length*100}%`;$('progress').setAttribute('aria-valuenow',String(Math.round(count/commitments.length*100)))}
+    function hasData(r){return !!r&&(Object.keys(r.habits||{}).length>0||!!r.win||!!r.improve)}
+    function renderCalendar(){const el=$('calendar');el.innerHTML='';['M','T','W','T','F','S','S'].forEach(x=>{const w=document.createElement('div');w.className='weekday';w.textContent=x;el.append(w)});const end=new Date(today),start=new Date(today);start.setDate(start.getDate()-29);const offset=(start.getDay()+6)%7;for(let i=0;i<offset;i++){const blank=document.createElement('div');blank.className='day blank';el.append(blank)}for(let d=new Date(start);d<=end;d.setDate(d.getDate()+1)){const copy=new Date(d),k=dateKey(copy),b=document.createElement('button');b.type='button';b.className='day'+(k===dateKey(selected)?' selected':'')+(k===dateKey(today)?' today':'')+(hasData(records[k])?' has-data':'');b.textContent=String(copy.getDate());b.setAttribute('aria-label',copy.toLocaleDateString(undefined,{weekday:'long',month:'long',day:'numeric'}));b.setAttribute('aria-pressed',String(k===dateKey(selected)));b.onclick=()=>{selected=copy;renderDay();renderCalendar()};el.append(b)}}
+    function renderReport(){const start=new Date(today);start.setDate(start.getDate()-29);let completed=0,total=0,active=0,perfect=0;for(let d=new Date(start);d<=today;d.setDate(d.getDate()+1)){const r=records[dateKey(d)];if(!r)continue;const done=commitments.filter((_,i)=>r.habits?.[i]==='done').length;completed+=done;total+=commitments.length;if(hasData(r))active++;if(done===commitments.length)perfect++}let streak=0;for(let d=new Date(today);;d.setDate(d.getDate()-1)){const r=records[dateKey(d)];if(!r||commitments.filter((_,i)=>r.habits?.[i]==='done').length===0)break;streak++;if(streak>=30)break}$('reportPercent').textContent=`${total?Math.round(completed/total*100):0}%`;$('daysActive').textContent=String(active);$('perfectDays').textContent=String(perfect);$('currentStreak').textContent=String(streak);$('reportNote').textContent=active?`${completed} of ${total} commitments completed across the last 30 days. Keep showing up, one day at a time.`:'Every day is a fresh start. Your records stay on this device.'}
+    function saveReflection(){clearTimeout(saveTimer);$('saveStatus').textContent='Saving…';saveTimer=setTimeout(()=>{const r=record();r.win=$('win').value;r.improve=$('improve').value;if(!r.win)delete r.win;if(!r.improve)delete r.improve;if(!hasData(r))delete records[dateKey(selected)];persist()},250)}
+    function toast(s){const t=$('toast');t.textContent=s;t.classList.add('show');clearTimeout(toast.timer);toast.timer=setTimeout(()=>t.classList.remove('show'),1500)}
+    $('win').addEventListener('input',saveReflection);$('improve').addEventListener('input',saveReflection);
+    $('prevDay').onclick=()=>{selected.setDate(selected.getDate()-1);renderDay();renderCalendar()};$('nextDay').onclick=()=>{if(dateKey(selected)<dateKey(today)){selected.setDate(selected.getDate()+1);renderDay();renderCalendar()}};$('todayButton').onclick=()=>{selected=new Date(today);renderDay();renderCalendar()};
+    renderDay();renderCalendar();renderReport();
+    if('serviceWorker'in navigator&&location.protocol!=='file:')window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+  })();
+  </script>
+</body>
+</html>
